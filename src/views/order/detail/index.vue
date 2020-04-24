@@ -18,7 +18,7 @@
             <div class="order-info">
               <div class="text-line">
                 <span class="text">订单号：{{orderVo.orderNo}}</span>
-                <span class="text">创建时间：{{orderVo.createTime}}</span>
+                <span class="text">创建时间：{{orderVo.createdTime}}</span>
               </div>
               <div class="text-line">
                                 <span class="text">
