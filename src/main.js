@@ -80,7 +80,7 @@ function mergeCartFlag() {
     cartListDto.cartProductVoList = PcLockr.get(enums.CART.SHOPPING_CART) ? JSON.parse(PcLockr.get(enums.CART.SHOPPING_CART)) : [];
     axios({
       method: 'post',
-      url: '/omc/cart/mergeUserCart',
+      url: '/order/cart/mergeUserCart',
       data: cartListDto
     })
       .then((res) => {
@@ -152,15 +152,15 @@ router.beforeEach((to, from, next) => {
   mergeCartFlag();
   if (to.meta.requestAuth) {
     store.dispatch('get_access_token', (res) => {
-      if (res) {
-        next();
-      } else {
-        if (process.env.NODE_ENV === 'production') {
-          window.location.href = 'http://localhost:1111/login';
-        } else {
-          window.location.href = 'http://localhost:1111/login';
-        }
-      }
+      // if (res) {
+      next();
+      // } else {
+      //   if (process.env.NODE_ENV === 'production') {
+      //     window.location.href = 'http://localhost:1111/login';
+      //   } else {
+      //     window.location.href = 'http://localhost:1111/login';
+      //   }
+      // }
     });
   } else {
     next();

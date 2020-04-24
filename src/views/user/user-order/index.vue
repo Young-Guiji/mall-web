@@ -45,14 +45,14 @@
     methods: {
       queryOrderItemVoList() {
         this.ajax({
-          url: `/omc/order/queryUserOrderListWithPage`,
+          url: `/order/order/queryUserOrderListWithPage`,
           data: {
             current: 1,
             size: 10
           },
           success: (res) => {
-            if (res.code === 200) {
-              this.orderVoList = res.result.list;
+            if (res.code === '200') {
+              this.orderVoList = res.data.records;
             }
           }
         });

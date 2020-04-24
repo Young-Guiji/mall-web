@@ -60,7 +60,7 @@
       },
       queryAddressList() {
         this.ajax({
-          url: `/omc/shipping/queryUserShippingListWithPage`,
+          url: `/order/shipping/queryUserShippingListWithPage`,
           data: {
             current: 1,
             size: 50
@@ -74,7 +74,7 @@
       },
       queryOrderItemVoList() {
         this.ajax({
-          url: `/omc/order/getOrderCartProduct`,
+          url: `/order/order/getOrderCartProduct`,
           success: (res) => {
             if (!res || res.code !== '200') {
               this.loadPage('user-order');
@@ -91,7 +91,7 @@
           return;
         }
         this.ajax({
-          url: `/omc/order/createOrderDoc/` + this.addressId,
+          url: `/order/order/createOrderDoc/` + this.addressId,
           success: (res) => {
             let orderVo = res.data;
             if (res.code === '200' && orderVo.orderNo) {
