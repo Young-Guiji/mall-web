@@ -18,6 +18,13 @@ module.exports = {
           '^/uac': '/mall-user'
         }
       },
+      '/goods': {
+        target: 'http://localhost:8443/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/goods': '/mall-goods'
+        }
+      },
       '/order': {
         target: 'http://localhost:8443/',
         changeOrigin: true,
